@@ -460,8 +460,8 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 
       const data = {
         message: fileExists
-          ? "Update solution - CodeHub"
-          : "Add solution - CodeHub",
+          ? `feat(Solución): se ha actualizado [${directoryName}]`
+          : `feat(Solución): se ha añadido [${directoryName}]`,
         content: encodedSolution,
       };
 
@@ -508,7 +508,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
         return;
       }
       const data = {
-        message: "Add README.md - CodeHub",
+        message: `docs(Readme): se ha añadido [${directoryName}]`,
         content: encodedReadMe,
       };
       const options = {
